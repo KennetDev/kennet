@@ -7,5 +7,13 @@
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql://localhost:5432/kennet</jdbc-url>
     </data-source>
+    <data-source source="LOCAL" name="Django default" uuid="9e3f5172-8313-41a0-81e6-3154c13f57f7">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>$PROJECT_DIR$/kennet/settings.py</remarks>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://127.0.0.1:5432/kennet</jdbc-url>
+    </data-source>
   </component>
 </project>
