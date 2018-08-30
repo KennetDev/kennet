@@ -21,14 +21,20 @@ class Publisher(models.Model):
 
 class Author(models.Model):
     salutation = models.CharField(max_length=10)
-    name = models.CharField(max_length=200)
-    email = models.EmailField()
-    headshot = models.ImageField(upload_to='author_headshots')
+    first_name = models.CharField(max_length=30, blank=True, null=True )
+    last_name = models.CharField(max_length=30, blank=True, null=True)
+    email = models.EmailField(blank=True, verbose_name='e-mail')
+    headshot = models.ImageField(upload_to='author_headshots', blank=True)
 
     def __str__(self):
-        return self.name
+        return '%s %s' % (self.first_name, self.last_name)
 
 
 class Book(models.Model):
     title = models.CharField(max_length=100)
     authors = models.ManyToManyField('Author')
+    publisher = models.ForeignKey(Publisher, on_delete=models.CASCADE)
+    publication_date  =  models.DateField(blank=True , null=True)
+
+    def __str__(self):
+        return self.title

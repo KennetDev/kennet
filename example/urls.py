@@ -1,7 +1,12 @@
 from django.urls import path
+from example.views import PublisherList
+from example import views
 
-from . import views
-
-urlpatterns = {
-    path('', views.HomeView.as_view(), name='home')
-}
+urlpatterns = [
+    path('publishers/', PublisherList.as_view()),
+    path('display_meta/', views.ua_display_good1, name='displaymeta'),
+    path('search_form/', views.search_form, name ='search'),
+    path('search/', views.search),
+ #   path('contact/thanks/', views.thanks),
+    path('contact/', views.contact),
+]
