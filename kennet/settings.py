@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'example',
     'blog',
+    'users',
 ]
 
 MIDDLEWARE = [
@@ -127,3 +128,7 @@ STATICFILES_DIRS = (
 )
 STATIC_URL = '/static/'
 #STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'static')
+
+LOGIN_REDIRECT_URL = 'home'
+LOGOUT_REDIRECT_URL = 'home'
+AUTH_USER_MODEL = 'users.CustomUser'
